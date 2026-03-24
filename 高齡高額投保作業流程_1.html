@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高齡高額投保作業流程</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @page {
+            margin: 10mm;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white; padding: 0; }
+            .print-container { box-shadow: none; border: none; width: 100%; max-width: 100%; }
+            .space-y-12 > div {
+                page-break-before: always;
+                break-before: always;
+            }
+            .space-y-12 > div:first-child {
+                page-break-before: avoid;
+                break-before: avoid;
+            }
+            .grid {
+                display: grid !important;
+            }
+            header {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+        }
+        body {
+            background-color: #f8fafc;
+            font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+            color: #0f172a;
+        }
+
+        .mermaid {
+            overflow-x: auto;
+            padding-top: 20px;
+        }
+        .mermaid svg {
+            width: auto !important;
+            max-width: 100% !important;
+            height: auto !important;
+            max-height: 400px !important;
+        }
+        .mermaid .node rect, 
+        .mermaid .node circle, 
+        .mermaid .node polygon, 
+        .mermaid .node path {
+            stroke-width: 5px !important;
+        }
+        .mermaid .edgePath path {
+            stroke-width: 3px !important;
+        }
+        .mermaid .cluster-label {
+            transform: translateY(0px);
+        }
+        .mermaid .cluster rect {
+            padding-top: 40px !important;
+        }
+        .mermaid .nodeLabel {
+            font-size: 16px !important;
+            font-weight: 900 !important;
+            line-height: 1.4 !important;
+        }
+        .mermaid .nodeLabel div {
+            font-size: 16px !important;
+        }
+
+        .ai-loading-dots::after {
+            content: '...';
+            animation: dots 1.5s steps(5, end) infinite;
+        }
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+    </style>
+</head>
+<body class="p-6 md:p-12 relative">
+    <div class="max-w-7xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-xl print-container border-2 border-slate-200">
+        
+        <!-- 標題區 -->
+        <header class="mb-10 text-center border-b-2 border-slate-900 pb-6">
+            <h1 class="text-3xl font-black text-slate-900 tracking-tight">高齡高額投保作業流程</h1>
+        </header>
+
+        <!-- 流程與內容對照區 -->
+        <div class="space-y-12">
+            
+            <!-- 第一階段：需求對齊 -->
+            <div class="grid grid-cols-1 xl:grid-cols-12 gap-10 items-center">
+                <div class="xl:col-span-8 bg-slate-50 p-6 rounded-2xl border-2 border-slate-300 shadow-inner">
+                    <div class="text-center mb-2" style="font-size: 28px; font-weight: 900; color: #0f172a;">第一階段：確認您的投保需求</div>
+                    <div class="mermaid w-full flex justify-center">
+graph TD
+    1_1["<div style='font-size: 16px; font-weight: 900; line-height: 1.4; color: #000;'>1.1 討論動機確認</div>"]
+    1_2["<div style='font-size: 16px; font-weight: 900; line-height: 1.4; color: #000;'>1.2 保額數據精算</div>"]
+    1_3["<div style='font-size: 16px; font-weight: 900; line-height: 1.4; color: #991b1b;'>2. 法定錄音錄影</div>"]
+    
+    1_1 --> 1_2
+    1_2 --> 1_3
+    
+    style 1_1 fill:#f8fafc,stroke:#0f172a,stroke-width:3px
+    style 1_2 fill:#f8fafc,stroke:#0f172a,stroke-width:3px
+    style 1_3 fill:#fee2e2,stroke:#b91c1c,stroke-width:4px
+                    </div>
+                </div>
+
+                <div class="xl:col-span-4 h-full">
+                    <div class="bg-white border-l-8 border-slate-800 rounded-r-2xl p-6 shadow-md ring-1 ring-slate-200 h-full">
+                        <h2 class="text-xl font-bold text-slate-900 mb-6 pb-2 border-b-2 border-slate-100">
+                            第一步：說明重點
+                        </h2>
+                        <div class="space-y-6 text-slate-700">
+                            <section>
+                                <h3 class="font-bold text-blue-800 mb-2 text-lg flex items-center">
+                                    <span class="bg-blue-800 text-white min-w-[32px] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">1</span>
+                                    投保需求與受益人
+                                </h3>
+                                <p class="pl-11 text-base leading-relaxed">
+                                    確認投保為<span class="text-red-600 font-bold">「資產傳承」</span>或<span class="text-red-600 font-bold">「預留稅源」</span>。精準設定受益人比例以達成意願。
+                                </p>
+                            </section>
+                            <section>
+                                <h3 class="font-bold text-blue-800 mb-2 text-lg flex items-center">
+                                    <span class="bg-blue-800 text-white min-w-[32px] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">2</span>
+                                    保額數據精算
+                                </h3>
+                                <p class="pl-11 text-base leading-relaxed">
+                                    依據您的資產現況，科學化算出最合適的保障額度，讓效益最大化。
+                                </p>
+                            </section>
+                            <section class="bg-red-50 p-4 rounded-xl mt-4">
+                                <h3 class="font-bold text-red-800 mb-2 text-lg flex items-center">
+                                    <span class="bg-red-800 text-white min-w-[32px] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">3</span>
+                                    法定錄音錄影
+                                </h3>
+                                <p class="pl-11 text-base text-slate-800 leading-relaxed">
+                                    政府規定<span class="font-bold underline decoration-red-400">保護長輩權益</span>之程序。透過錄影確認本人意願，確保合規。
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二階段：財力對齊 -->
+            <div class="grid grid-cols-1 xl:grid-cols-12 gap-10 items-center">
+                <div class="xl:col-span-8 bg-blue-50 p-6 rounded-2xl border-2 border-blue-200 shadow-inner">
+                    <div class="text-center mb-2" style="font-size: 28px; font-weight: 900; color: #1d4ed8;">第二階段：文件與財力準備</div>
+                    <div class="mermaid w-full flex justify-center">
+graph TD
+    2_1["<div style='font-size: 16px; font-weight: 900; line-height: 1.4; color: #000;'>3. 簽署要保文件</div>"]
+    2_2["<div style='font-size: 16px; font-weight: 900; line-height: 1.4; color: #1d4ed8;'>4. 財力證明準備</div>"]
+    2_3["<div style='font-size: 16px; font-weight: 900; line-height: 1.4; color: #000;'>5. 繳納首期保費</div>"]
+    
+    2_1 --> 2_2
+    2_2 --> 2_3
+    
+    style 2_1 fill:#f8fafc,stroke:#3b82f6,stroke-width:3px
+    style 2_2 fill:#eff6ff,stroke:#1d4ed8,stroke-width:4px
+    style 2_3 fill:#f8fafc,stroke:#3b82f6,stroke-width:3px
+                    </div>
+                </div>
+
+                <div class="xl:col-span-4 h-full">
+                    <div class="bg-white border-l-8 border-blue-600 rounded-r-2xl p-6 shadow-md ring-1 ring-slate-200 h-full">
+                        <h2 class="text-xl font-bold text-slate-900 mb-6 pb-2 border-b-2 border-slate-100">
+                            第二步：財力證明必備清單
+                        </h2>
+                        <div class="space-y-6 text-slate-700">
+                            <section>
+                                <h3 class="font-bold text-blue-800 mb-2 text-lg flex items-center">
+                                    <span class="bg-blue-800 text-white min-w-[32px] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">1</span>
+                                    數據、證券與債權
+                                </h3>
+                                <p class="pl-11 text-base leading-relaxed">
+                                    股票持股明細、基金市值截圖、黃金存摺或公證之債權契約。
+                                </p>
+                            </section>
+                            <section>
+                                <h3 class="font-bold text-blue-800 mb-2 text-lg flex items-center">
+                                    <span class="bg-blue-800 text-white min-w-[32px] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">2</span>
+                                    不動產產權證明
+                                </h3>
+                                <p class="pl-11 text-base leading-relaxed">
+                                    土地及建物所有權狀影本、近一個月電子謄本、銀行鑑價報告。
+                                </p>
+                            </section>
+                            <section>
+                                <h3 class="font-bold text-blue-800 mb-2 text-lg flex items-center">
+                                    <span class="bg-blue-800 text-white min-w-[32px] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">3</span>
+                                    綜合財務報表
+                                </h3>
+                                <p class="pl-11 text-base leading-relaxed">
+                                    個人資產負債表、未上市公司股權證明、近兩年綜所稅扣繳憑單。
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第三階段：體檢對齊 -->
+            <div class="grid grid-cols-1 xl:grid-cols-12 gap-10 items-center">
+                <div class="xl:col-span-8 bg-emerald-50 p-6 rounded-2xl border-2 border-emerald-200 shadow-inner">
+                    <div class="text-center mb-2" style="font-size: 28px; font-weight: 900; color: #15803d;">第三階段：核保審查程序</div>
+                    <div class="mermaid w-full flex justify-center">
+graph TD
+    3_1["<div style='font-size: 16px; font-weight: 900; line-height: 1.4; color: #15803d;'>6. 高齡專屬體檢</div>"]
+    3_2["<div style='font-size: 16px; font-weight: 900; line-height: 1.4; color: #000;'>7. 財務/AML審查</div>"]
+    
+    3_1 --> 3_2
+    
+    style 3_1 fill:#f0fdf4,stroke:#15803d,stroke-width:4px
+    style 3_2 fill:#f8fafc,stroke:#10b981,stroke-width:3px
+                    </div>
+                </div>
+
+                <div class="xl:col-span-4 h-full">
+                    <div class="bg-white border-l-8 border-emerald-500 rounded-r-2xl p-6 shadow-md ring-1 ring-slate-200 h-full">
+                        <h2 class="text-xl font-bold text-slate-900 mb-6 pb-2 border-b-2 border-slate-100">
+                            第三步：體檢與審查重點
+                        </h2>
+                        <div class="space-y-6 text-slate-700">
+                            <section>
+                                <h3 class="font-bold text-emerald-700 mb-2 text-lg flex items-center">
+                                    <span class="bg-emerald-600 text-white min-w-[32px] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">1</span>
+                                    財務優先審查
+                                </h3>
+                                <p class="pl-11 text-base leading-relaxed">
+                                    保險公司先確認資產狀況合理，若財務審核後有疑慮，才會安排醫務體檢。
+                                </p>
+                            </section>
+                            <section>
+                                <h3 class="font-bold text-emerald-700 mb-2 text-lg flex items-center">
+                                    <span class="bg-emerald-600 text-white min-w-[32px] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">2</span>
+                                    業務員全程陪同
+                                </h3>
+                                <p class="pl-11 text-base leading-relaxed">
+                                    體檢行程由專業業務員全程陪同，協助處理醫院現場行政流程，確保長輩安心。
+                                </p>
+                            </section>
+                            <section>
+                                <h3 class="font-bold text-emerald-700 mb-2 text-lg flex items-center">
+                                    <span class="bg-emerald-600 text-white min-w-[32px] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">3</span>
+                                    核保結果判定
+                                </h3>
+                                <p class="pl-11 text-base leading-relaxed">
+                                    待財務證明、錄音、醫務體檢皆完成且合格，才會產出正式核保決策。
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第四階段：發單與售後對齊 -->
+            <div class="grid grid-cols-1 xl:grid-cols-12 gap-10 items-center">
+                <div class="xl:col-span-8 bg-indigo-50 p-6 rounded-2xl border-2 border-indigo-200 shadow-inner">
+                    <div class="text-center mb-2" style="font-size: 28px; font-weight: 900; color: #4338ca;">第四階段：發單與售後程序</div>
+                    <div class="mermaid w-full flex justify-center">
+graph TD
+    4_1["<div style='font-size: 16px; font-weight: 900; line-height: 1.4; color: #000;'>8. 核保決策發單</div>"]
+    4_2["<div style='font-size: 16px; font-weight: 900; line-height: 1.4; color: #000;'>9. 保單親送簽收</div>"]
+    4_3["<div style='font-size: 16px; font-weight: 900; line-height: 1.4; color: #4338ca;'>10. 售後 QC 電訪</div>"]
+    
+    4_1 --> 4_2
+    4_2 --> 4_3
+    
+    style 4_1 fill:#f8fafc,stroke:#4f46e5,stroke-width:3px
+    style 4_2 fill:#f8fafc,stroke:#4f46e5,stroke-width:3px
+    style 4_3 fill:#e0e7ff,stroke:#4338ca,stroke-width:4px
+                    </div>
+                </div>
+
+                <div class="xl:col-span-4 h-full">
+                    <div class="bg-white border-l-8 border-indigo-600 rounded-r-2xl p-6 shadow-md ring-1 ring-slate-200 h-full">
+                        <h2 class="text-xl font-bold text-slate-900 mb-6 pb-2 border-b-2 border-slate-100">
+                            第四步：發單與售後重點
+                        </h2>
+                        <div class="space-y-6 text-slate-700">
+                            <section>
+                                <h3 class="font-bold text-indigo-800 mb-2 text-lg flex items-center">
+                                    <span class="bg-indigo-700 text-white min-w-[32px] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">1</span>
+                                    核保決策與發單
+                                </h3>
+                                <p class="pl-11 text-base leading-relaxed">
+                                    核保通過後正式製發保單。若有加費或條件承保，需先取得您的同意簽署。
+                                </p>
+                            </section>
+                            <section>
+                                <h3 class="font-bold text-indigo-800 mb-2 text-lg flex items-center">
+                                    <span class="bg-indigo-700 text-white min-w-[32px] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">2</span>
+                                    保單親送與簽收
+                                </h3>
+                                <p class="pl-11 text-base leading-relaxed">
+                                    業務員將親自送達保單，與您當面點交並確認條款無誤後，簽署回條。
+                                </p>
+                            </section>
+                            <section class="bg-indigo-50 p-4 rounded-xl mt-4">
+                                <h3 class="font-bold text-indigo-800 mb-2 text-lg flex items-center">
+                                    <span class="bg-indigo-700 text-white min-w-[32px] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">3</span>
+                                    售後 QC 電訪
+                                </h3>
+                                <p class="pl-11 text-base text-slate-800 leading-relaxed">
+                                    保險公司將進行<span class="font-bold">品質確認電訪</span>，確認您清楚投保內容且為親自簽名，保障契約效力。
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI 溝通助理 -->
+        <div class="mt-16 bg-gradient-to-br from-purple-50 to-indigo-50 border-2 border-purple-200 rounded-3xl p-8 shadow-lg no-print relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 text-purple-200 opacity-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-48 w-48" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+            </div>
+            <div class="relative z-10">
+                <h2 class="text-2xl font-black text-purple-900 mb-2 flex items-center">
+                    ✨ 業務面談：AI 即時話術支援
+                </h2>
+                <p class="text-purple-700 mb-6 font-medium">若客戶對流程產生疑慮，輸入客戶的反對問題，AI 將為您生成溫暖、同理的應對話術。</p>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                    <div class="md:col-span-5 space-y-4">
+                        <div>
+                            <label class="block text-sm font-bold text-purple-900 mb-1">客戶的疑慮或抗拒點：</label>
+                            <textarea id="ai-concern" rows="3" class="w-full border border-purple-300 rounded-lg p-3 bg-white text-slate-700 focus:ring-2 focus:ring-purple-500 outline-none" placeholder="例如：為什麼一定要錄音錄影？感覺很不被信任。"></textarea>
+                        </div>
+                        <button id="ai-btn" onclick="generateScript()" class="w-full bg-purple-600 text-white font-bold py-3 px-4 rounded-xl shadow-md hover:bg-purple-700 transition flex justify-center items-center">
+                            產生專屬安撫腳本
+                        </button>
+                    </div>
+                    <div class="md:col-span-7">
+                        <div class="bg-white border-2 border-purple-100 rounded-xl p-6 h-full min-h-[150px] shadow-inner relative">
+                            <h3 class="text-sm font-bold text-slate-400 mb-3 border-b pb-2">建議話術腳本：</h3>
+                            <div id="ai-output" class="text-slate-700 leading-relaxed font-medium">
+                                <span class="text-slate-400 italic">請輸入客戶疑慮，點擊左側按鈕生成腳本...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 頁尾 -->
+        <footer class="mt-16 pt-8 border-t-2 border-slate-100 text-center">
+            <button onclick="window.print()" class="no-print bg-slate-900 text-white px-10 py-4 rounded-full text-xl font-bold hover:bg-slate-800 transition shadow-lg mb-6">
+                🖨️ 呼叫列印選單
+            </button>
+        </footer>
+
+    </div>
+
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'neutral',
+            flowchart: { 
+                useMaxWidth: true, 
+                htmlLabels: true,
+                curve: 'basis',
+                nodeSpacing: 40, 
+                rankSpacing: 60
+            }
+        });
+
+        const apiKey = "";
+
+        async function generateScript() {
+            const concern = document.getElementById('ai-concern').value;
+            const outputDiv = document.getElementById('ai-output');
+            const btn = document.getElementById('ai-btn');
+
+            if (!concern.trim()) {
+                outputDiv.innerHTML = '<span class="text-red-500 font-bold">⚠️ 請先輸入客戶的疑慮狀況。</span>';
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerHTML = '✨ 思考中<span class="ai-loading-dots"></span>';
+            btn.classList.replace('bg-purple-600', 'bg-purple-400');
+            outputDiv.innerHTML = '<div class="animate-pulse text-purple-500 font-bold">正在為您撰寫專屬的溫暖安撫腳本，請稍候...</div>';
+
+            const prompt = `你是一位頂尖的高資產保險顧問。
+            現在有一位長輩客戶，在投保流程中產生了抗拒。
+            客戶目前的疑慮是：「${concern}」。
+            
+            請幫我（業務員）撰寫一段大約 150-200 字的「對話腳本」，讓我可以直接唸出來安撫客戶。
+            要求：
+            1. 語氣必須極度溫暖、尊榮、具備同理心。
+            2. 絕對不要使用生硬的法律或保險術語。
+            3. 結尾要給予客戶安心感。`;
+
+            try {
+                const response = await callGeminiWithRetry(prompt);
+                const formattedResponse = response
+                    .replace(/\n/g, '<br>')
+                    .replace(/\*\*(.*?)\*\*/g, '<span class="text-purple-800 font-black">$1</span>');
+                
+                outputDiv.innerHTML = `<div class="text-slate-800 text-lg leading-relaxed">${formattedResponse}</div>`;
+            } catch (error) {
+                outputDiv.innerHTML = `<span class="text-red-500 font-bold">❌ 產生失敗：請確認網路狀態後再試。</span>`;
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '產生專屬安撫腳本';
+                btn.classList.replace('bg-purple-400', 'bg-purple-600');
+            }
+        }
+
+        async function callGeminiWithRetry(prompt, retries = 5) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const payload = { contents: [{ parts: [{ text: prompt }] }] };
+
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const res = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                    const data = await res.json();
+                    return data.candidates[0].content.parts[0].text;
+                } catch (err) {
+                    if (i === retries - 1) throw err;
+                    await new Promise(r => setTimeout(r, Math.pow(2, i) * 1000));
+                }
+            }
+        }
+    </script>
+</body>
+</html>
